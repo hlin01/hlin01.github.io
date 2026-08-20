@@ -65,7 +65,7 @@ description: Hender Lin is an applied AI scientist building production agentic s
         <p class="experience-date">Aug 2025–Present</p>
         <h3>Wealth.com</h3>
         <p class="experience-role">Applied Scientist, Applied AI</p>
-        <p class="experience-location">Ester</p>
+        <p class="experience-location">Ester Intelligence</p>
       </div>
       <ul>
         <li>Architected and shipped Ester’s production multi-agent platform, replacing six legacy agent packages with orchestrator, leaf-agent, and summarizer layers plus shared context, citation, and live-event infrastructure.</li>
