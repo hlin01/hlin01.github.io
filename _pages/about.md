@@ -56,8 +56,7 @@ description: Hender Lin is an applied AI scientist building production agentic s
 
 <section id="work" class="site-section" aria-labelledby="work-title">
   <header class="section-header">
-    <p class="eyebrow">Selected work</p>
-    <h2 id="work-title">Building AI that holds up in production</h2>
+    <h2 id="work-title">Selected work</h2>
   </header>
 
   <div class="experience-list">
@@ -66,7 +65,7 @@ description: Hender Lin is an applied AI scientist building production agentic s
         <p class="experience-date">Aug 2025–Present</p>
         <h3>Wealth.com</h3>
         <p class="experience-role">Applied Scientist, Applied AI</p>
-        <p class="experience-location">New York City</p>
+        <p class="experience-location">Ester</p>
       </div>
       <ul>
         <li>Architected and shipped Ester’s production multi-agent platform, replacing six legacy agent packages with orchestrator, leaf-agent, and summarizer layers plus shared context, citation, and live-event infrastructure.</li>
