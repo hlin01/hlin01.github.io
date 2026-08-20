@@ -104,12 +104,8 @@ description: Hender Lin is an applied AI scientist building production agentic s
 </section>
 
 <section id="research" class="site-section" aria-labelledby="research-title">
-  <header class="section-header section-header-split">
-    <div>
-      <p class="eyebrow">Research</p>
-      <h2 id="research-title">Evaluation grounded in utility</h2>
-    </div>
-    <p>I study how AI systems behave under real constraints—not only whether a benchmark score moves.</p>
+  <header class="section-header">
+    <h2 id="research-title">Research</h2>
   </header>
 
   <div class="research-grid">
@@ -131,8 +127,7 @@ description: Hender Lin is an applied AI scientist building production agentic s
 
 <section id="education" class="site-section" aria-labelledby="education-title">
   <header class="section-header">
-    <p class="eyebrow">Education</p>
-    <h2 id="education-title">Technical depth, applied direction</h2>
+    <h2 id="education-title">Education</h2>
   </header>
 
   <div class="education-list">
