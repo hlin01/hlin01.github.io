@@ -21,7 +21,6 @@ description: Hender Lin is an applied AI scientist building production agentic s
       <a href="mailto:hlin01@g.ucla.edu">Email</a>
       <a href="https://www.linkedin.com/in/hender-lin" target="_blank" rel="noopener">LinkedIn <span aria-hidden="true">↗</span></a>
       <a href="https://github.com/hlin01" target="_blank" rel="noopener">GitHub <span aria-hidden="true">↗</span></a>
-      <a href="https://orcid.org/0009-0009-6032-1977" target="_blank" rel="noopener">ORCID <span aria-hidden="true">↗</span></a>
     </div>
   </div>
   <figure class="portrait-frame">
@@ -107,6 +106,12 @@ description: Hender Lin is an applied AI scientist building production agentic s
   <header class="section-header">
     <h2 id="research-title">Research</h2>
   </header>
+
+  <nav class="research-profile-links" aria-label="Research profiles">
+    <a href="https://scholar.google.com/citations?user=oLy-zt4AAAAJ&amp;hl=en" target="_blank" rel="noopener">Google Scholar <span aria-hidden="true">↗</span></a>
+    <a href="https://orcid.org/0009-0009-6032-1977" target="_blank" rel="noopener">ORCID <span aria-hidden="true">↗</span></a>
+    <a href="https://openreview.net/profile?id=~Hender_Lin1" target="_blank" rel="noopener">OpenReview <span aria-hidden="true">↗</span></a>
+  </nav>
 
   <div class="research-grid">
     <article class="research-item">
