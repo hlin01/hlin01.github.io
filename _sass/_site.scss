@@ -26,6 +26,58 @@ html[data-theme="dark"] {
   --global-card-bg-color: #111a2d;
 }
 
+// Hidden CRT theme, entered by shift-clicking the theme toggle. Layers on
+// top of the gem's light/dark/system variables rather than replacing them.
+html[data-crt="true"] {
+  --global-bg-color: #010f0a;
+  --global-text-color: #8bffc0;
+  --global-text-color-light: #4ade80;
+  --global-theme-color: #39ff88;
+  --global-hover-color: #baffd9;
+  --global-hover-text-color: #010f0a;
+  --global-footer-bg-color: #010f0a;
+  --global-footer-text-color: #4ade80;
+  --global-footer-link-color: #39ff88;
+  --global-divider-color: rgba(57, 255, 136, 0.35);
+  --global-card-bg-color: #04180f;
+}
+
+html[data-crt="true"] body {
+  font-family: "SFMono-Regular", Menlo, Consolas, "Liberation Mono", monospace;
+  text-shadow: 0 0 6px rgba(57, 255, 136, 0.35);
+}
+
+html[data-crt="true"] .navbar,
+html[data-crt="true"] .mobile-bar {
+  background-color: rgba(1, 15, 10, 0.9);
+}
+
+html[data-crt="true"] .contact-panel {
+  border-color: rgba(57, 255, 136, 0.35);
+  background: rgba(57, 255, 136, 0.08);
+}
+
+html[data-crt="true"] .primary-action {
+  color: #010f0a;
+  background: #39ff88;
+}
+
+html[data-crt="true"] .primary-action:hover {
+  color: #010f0a;
+  background: #baffd9;
+}
+
+html[data-crt="true"] body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: 2000;
+  background: repeating-linear-gradient(to bottom, rgba(0, 0, 0, 0.15) 0px, rgba(0, 0, 0, 0.15) 1px, transparent 1px, transparent 3px);
+  mix-blend-mode: multiply;
+  opacity: 0.5;
+  pointer-events: none;
+}
+
 html {
   scroll-behavior: smooth;
 }
@@ -113,12 +165,29 @@ html[data-theme="dark"] .navbar {
 }
 
 .hero {
+  position: relative;
   display: grid;
   grid-template-columns: minmax(0, 1.35fr) minmax(240px, 0.65fr);
   gap: clamp(3rem, 8vw, 6rem);
   align-items: center;
   min-height: min(690px, calc(100vh - 64px));
   padding: clamp(3.5rem, 8vw, 6.5rem) 0;
+  overflow: hidden;
+}
+
+.hero-canvas {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+
+.hero-copy,
+.hero .portrait-frame {
+  position: relative;
+  z-index: 1;
 }
 
 .eyebrow {
@@ -213,6 +282,84 @@ html[data-theme="dark"] .navbar {
 
 html[data-theme="dark"] .portrait-frame img {
   box-shadow: 0 24px 60px rgba(0, 0, 0, 0.35);
+}
+
+.portrait-frame img {
+  cursor: pointer;
+}
+
+@keyframes portrait-glitch {
+  0%,
+  100% {
+    clip-path: none;
+    transform: translate(0, 0);
+    filter: none;
+  }
+
+  10% {
+    clip-path: inset(10% 0 60% 0);
+    transform: translate(-6px, 2px);
+    filter: hue-rotate(30deg) saturate(3);
+  }
+
+  20% {
+    clip-path: inset(60% 0 5% 0);
+    transform: translate(4px, -2px);
+    filter: hue-rotate(-20deg) saturate(2);
+  }
+
+  35% {
+    clip-path: inset(30% 0 40% 0);
+    transform: translate(-3px, 3px);
+    filter: hue-rotate(60deg);
+  }
+
+  50% {
+    clip-path: inset(20% 0 55% 0);
+    transform: translate(-4px, 1px);
+    filter: hue-rotate(-40deg) saturate(2.5);
+  }
+
+  70% {
+    clip-path: inset(45% 0 20% 0);
+    transform: translate(-5px, -2px);
+    filter: hue-rotate(90deg);
+  }
+
+  85% {
+    clip-path: none;
+    transform: translate(3px, 1px);
+    filter: saturate(3);
+  }
+}
+
+.portrait-frame.is-glitching img {
+  animation: portrait-glitch 1.5s steps(1, end) 1;
+}
+
+.portrait-frame.is-glitching::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 22px;
+  background: repeating-linear-gradient(to bottom, rgba(255, 255, 255, 0.08) 0px, rgba(255, 255, 255, 0.08) 1px, transparent 1px, transparent 3px);
+  mix-blend-mode: overlay;
+  pointer-events: none;
+}
+
+@keyframes portrait-flash {
+  0%,
+  100% {
+    filter: none;
+  }
+
+  50% {
+    filter: invert(0.15);
+  }
+}
+
+.portrait-frame.is-flashing img {
+  animation: portrait-flash 0.22s ease-in-out 1;
 }
 
 .section-nav {
@@ -494,6 +641,82 @@ html[data-theme="dark"] .contact-panel {
   color: var(--global-theme-color);
 }
 
+.matrix-rain-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 3000;
+  background: #000000;
+  pointer-events: none;
+  transition: opacity 400ms ease;
+}
+
+.matrix-rain-overlay.is-fading {
+  opacity: 0;
+}
+
+.cursor-pet {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 2500;
+  color: var(--global-theme-color);
+  font-size: 1.4rem;
+  text-shadow: 0 0 10px currentcolor;
+  pointer-events: none;
+  animation: cursor-pet-pulse 1.6s ease-in-out infinite;
+}
+
+@keyframes cursor-pet-pulse {
+  0%,
+  100% {
+    transform: translate(-50%, -50%) scale(0.9);
+    opacity: 0.65;
+  }
+
+  50% {
+    transform: translate(-50%, -50%) scale(1.15);
+    opacity: 1;
+  }
+}
+
+// Hidden /void/ page: the site's chrome stays mounted (keeps CSS, theme
+// toggle, and navigation intact) but is hidden so the page itself reads as
+// an empty room rather than a normal page.
+body:has(.void-page) #navbar,
+body:has(.void-page) .mobile-bar,
+body:has(.void-page) footer.sticky-bottom {
+  display: none;
+}
+
+body.fixed-top-nav:has(.void-page) {
+  padding-top: 0;
+}
+
+.void-page {
+  display: flex;
+  min-height: 100vh;
+  align-items: center;
+  justify-content: center;
+}
+
+.void-glyph {
+  color: var(--global-text-color-light);
+  font-size: 2.5rem;
+  opacity: 0.35;
+  animation: void-pulse 4s ease-in-out infinite;
+}
+
+@keyframes void-pulse {
+  0%,
+  100% {
+    opacity: 0.2;
+  }
+
+  50% {
+    opacity: 0.5;
+  }
+}
+
 footer.sticky-bottom {
   margin-top: 5rem !important;
   padding-top: 1.5rem;
@@ -634,5 +857,14 @@ footer.sticky-bottom .container {
   .hero-links a:hover,
   .research-profile-links a:hover {
     transform: none;
+  }
+
+  .cursor-pet {
+    animation: none;
+    transform: translate(-50%, -50%);
+  }
+
+  .void-glyph {
+    animation: none;
   }
 }

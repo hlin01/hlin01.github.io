@@ -12,6 +12,7 @@ description: Hender Lin is an applied AI scientist building production agentic s
 </div>
 
 <section id="top" class="hero" aria-labelledby="hero-title">
+  <canvas class="hero-canvas" aria-hidden="true"></canvas>
   <div class="hero-copy">
     <p class="eyebrow">New York City · Applied AI</p>
     <h1 id="hero-title">Hender Lin</h1>
@@ -164,3 +165,6 @@ description: Hender Lin is an applied AI scientist building production agentic s
   </div>
 </section>
 </div>
+
+<script src="{{ '/assets/js/hero-canvas.js' | relative_url | bust_file_cache }}" defer></script>
+<script src="{{ '/assets/js/easter-eggs.js' | relative_url | bust_file_cache }}" defer></script>
