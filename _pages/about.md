@@ -115,16 +115,16 @@ description: Hender Lin is an applied AI scientist building production agentic s
 
   <div class="research-grid">
     <article class="research-item">
+      <p class="research-kind">First author · Accepted to EACL 2027 (Main Conference)</p>
+      <h3>Synthetic Longitudinal Case Notes for Human Services: A Free-Text Corpus and Utility-Centered Evaluation</h3>
+      <p>Built a structured-first pipeline that generated 3,137 longitudinal case notes across 87 synthetic clients, with evaluation of downstream transfer, privacy-side risk, and practitioner usefulness. A synthetic-trained classifier reached 84% of real-trained macro-F1 on 250 human-labeled held-out notes, outperforming a direct-prompt baseline.</p>
+    </article>
+
+    <article class="research-item">
       <p class="research-kind">Sole author · arXiv · 2025</p>
       <h3>Enhancing NLP Robustness and Generalization through LLM-Generated Contrast Sets</h3>
       <p>Generated a balanced 3,000-example SNLI contrast set with Gemini 1.5 Pro. Adding it as 0.5% of training data improved ELECTRA-small by 7.4 points on seen and 2.9 points on unseen perturbations, while standard accuracy held at 89.0–89.1%.</p>
       <a class="text-link" href="https://arxiv.org/abs/2503.06648" target="_blank" rel="noopener">Read the paper <span aria-hidden="true">↗</span></a>
-    </article>
-
-    <article class="research-item">
-      <p class="research-kind">Current graduate research · 2025–2026</p>
-      <h3>Synthetic longitudinal human-services data and utility-centered evaluation</h3>
-      <p>Developing a structured-first synthetic-data pipeline and practical evaluation for longitudinal human-services data. The work studies downstream transfer, privacy-side risk, and practitioner usefulness while keeping private source notes and real trajectories local.</p>
     </article>
 
   </div>
