@@ -69,8 +69,10 @@ description: Hender Lin is an applied AI scientist building production agentic s
         <p class="experience-location">Ester Intelligence</p>
       </div>
       <ul>
-        <li>Architected and shipped Ester’s production multi-agent platform, replacing six legacy agent packages with orchestrator, leaf-agent, and summarizer layers plus shared context, citation, and live-event infrastructure.</li>
-        <li>Led reliability and workflow work across multimodal document analysis, long-term memory, safety, and a major enterprise-custodian integration.</li>
+        <li>Architected and shipped Ester’s production multi-agent platform, consolidating six legacy packages with shared orchestration, context, citations, and live agent activity.</li>
+        <li>Architected the next generation of Ester Agent in Schwab Advisor Center; delivered secure access and resumable streaming, supporting approximately 91,000 advisor conversation turns since the IMPACT 2026 conference launch.</li>
+        <li>Architected and deployed production long-term memory for advisor and client context across conversations, and shipped advisor workflows across the agent, API, and React stack.</li>
+        <li>Led model upgrades across quality, latency, cost, safety, and residency; one upgrade cut agent p95 latency 45% and estimated inference cost 37%.</li>
       </ul>
     </article>
 
@@ -140,6 +142,7 @@ description: Hender Lin is an applied AI scientist building production agentic s
       <div>
         <h3>The University of Texas at Austin</h3>
         <p>M.S. Artificial Intelligence · GPA 3.92 / 4.00</p>
+        <p>Research advisors: Min Kyung Lee, Junyi Jessy Li</p>
       </div>
       <p class="education-date">December 2025</p>
     </article>
